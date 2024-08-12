@@ -13,6 +13,8 @@
    npm i yup
 
 
+
+
 ## React Navigation setup : 
 
    npm install @react-navigation/native
@@ -24,6 +26,16 @@
    npm install @react-navigation/bottom-tabs
 
    npm install @react-navigation/drawer
+
+
+
+## Vector icon setup :
+
+   npm i react-native-vector-icons
+
+
+### android/app/build.gradle ====>
+     apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
 
 
 
