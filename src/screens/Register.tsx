@@ -1,3 +1,5 @@
+import {yupResolver} from '@hookform/resolvers/yup';
+import {useForm} from 'react-hook-form';
 import {
   View,
   Text,
@@ -6,50 +8,39 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
+import {registerSchema} from '../utils/formSchema';
 import logo from '../assets/logo.png';
-import {useForm} from 'react-hook-form';
-import {yupResolver} from '@hookform/resolvers/yup';
-import {loginSchema} from '../utils/formSchema';
 import RHFTextField from '../components/RHFTextField';
-import {users} from '../data/users';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../App';
 
-interface IInputData {
-  email: string;
-  password: string;
-}
+type RegisterProps = NativeStackScreenProps<RootStackParamList, 'Register'>;
 
-type LoginProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
-
-const Login = ({navigation}: LoginProps) => {
+const Register = ({navigation}: RegisterProps) => {
   const {
     control,
     handleSubmit,
     formState: {errors},
   } = useForm({
-    resolver: yupResolver(loginSchema),
+    resolver: yupResolver(registerSchema),
   });
 
-  const onSubmit = async (data: IInputData) => {
-    const user = users.find(
-      u => u.email === data.email && u.password === data.password,
-    );
-
-    if (user) {
-      Alert.alert('Login', 'Login Success');
-      await AsyncStorage.setItem('user', JSON.stringify(user));
-      navigation.navigate('TabNavigator');
-    } else {
-      Alert.alert('Login', 'Invalid Email or Password. Please try again');
-    }
+  const onSubmit = (data: any) => {
+    console.log(data);
+    Alert.alert('Register', 'Register Success');
   };
 
   return (
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} />
-      <Text style={styles.headingText}>A Software Platform</Text>
+      <Text style={styles.headingText}>Register Here</Text>
+
+      <RHFTextField
+        control={control}
+        name="name"
+        placeholder="Name"
+        errors={errors}
+      />
 
       <RHFTextField
         control={control}
@@ -68,14 +59,35 @@ const Login = ({navigation}: LoginProps) => {
         }}
       />
 
+      <RHFTextField
+        control={control}
+        name="city"
+        placeholder="City"
+        errors={errors}
+      />
+
+      <RHFTextField
+        control={control}
+        name="country"
+        placeholder="Country"
+        errors={errors}
+      />
+
+      <RHFTextField
+        control={control}
+        name="phone"
+        placeholder="Phone"
+        errors={errors}
+      />
+
       <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
-        <Text style={styles.buttonText}>Login</Text>
+        <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
 
       <Text
         style={styles.linkText}
-        onPress={() => navigation.navigate('Register')}>
-        Create new account.
+        onPress={() => navigation.navigate('Login')}>
+        Already have an account? Login{' '}
       </Text>
     </View>
   );
@@ -119,4 +131,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Register;
