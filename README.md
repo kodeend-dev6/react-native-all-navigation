@@ -1,59 +1,54 @@
 # React Navigation + React Hook Form Project
 
 ## Project Installation :
-   npx react-native@latest init project_name
 
+```bash
+npx react-native@latest init project_name
+```
 
 ## React Hook Form setup :
 
-   npm install react-hook-form
+```bash
+npm install react-hook-form
+```
 
-   npm i @hookform/resolvers
+```bash
+npm i @hookform/resolvers
+```
 
-   npm i yup
+```bash
+npm i yup
+```
 
+## React Navigation setup :
 
+```bash
+npm install @react-navigation/native
+```
 
+npm install react-native-screens react-native-safe-area-context
 
-## React Navigation setup : 
+npm install @react-navigation/native-stack
 
-   npm install @react-navigation/native
+npm install @react-navigation/bottom-tabs
 
-   npm install react-native-screens react-native-safe-area-context
-
-   npm install @react-navigation/native-stack
-
-   npm install @react-navigation/bottom-tabs
-
-   npm install @react-navigation/drawer
-
-
+npm install @react-navigation/drawer
 
 ## Vector icon setup :
 
-   npm i react-native-vector-icons
-
+npm i react-native-vector-icons
 
 ### android/app/build.gradle ====>
+
      apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
-
-
-
-
-
-
-
-
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
-
-
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
