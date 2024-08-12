@@ -49,5 +49,11 @@ npm i react-native-vector-icons
 ```
 
 ### android/app/build.gradle ====>
+
      apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
 
+## React Native async storage
+
+```bash
+npm i @react-native-async-storage/async-storage
+```
