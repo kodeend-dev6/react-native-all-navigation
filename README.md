@@ -7,8 +7,23 @@
 ## React Hook Form setup :
 
    npm install react-hook-form
+
    npm i @hookform/resolvers
+
    npm i yup
+
+
+## React Navigation setup : 
+
+   npm install @react-navigation/native
+
+   npm install react-native-screens react-native-safe-area-context
+
+   npm install @react-navigation/native-stack
+
+   npm install @react-navigation/bottom-tabs
+
+   npm install @react-navigation/drawer
 
 
 
